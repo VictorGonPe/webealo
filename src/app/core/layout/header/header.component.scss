@@ -1,16 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans+Narrow:wght@400;700&display=swap");
 
 .container-logo {
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
 h1 {
-    font-family: "GFS Neohellenic", sans-serif;
-    font-size: 2rem;
+  font-family: "GFS Neohellenic", sans-serif;
+  font-size: 2.5rem;
 }
 
 p {
-    font-family: "PT Sans Narrow", sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 1.5rem;
+}
+
+img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  display: block;
+}
+
+.text-over {
+  width: 100%;
+  height: 95px;
+  background-color: rgb(6, 162, 246, 0.7);
+  padding-top: 2px;
+  position: absolute;
+  top: 91.4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  img {
+    height: 250px;
+  }
+  .text-over {
+    height: 85px;
+    top: 83%;
+    left: 50%;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
     font-size: 1.2rem;
+  }
 }
