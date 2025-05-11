@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik+Iso&display=swap");
+
+img {
+  max-width: 120px;
+}
+.title {
+  font-family: "Audiowide", sans-serif;
+  color: #374c96;
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  img {
+    max-width: 90px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    padding-top: 1.8rem;
+  }
+}
