@@ -1,13 +1,14 @@
-<div class="card">
-    <div class="d-flex justify-content-around align-items-center">
-        <div class="col-6">
-            <app-title-card [title]="title" [subtitle]="subtitle"></app-title-card>
-        </div>
-        <div class="col-3">
-            <p class="price mb-0">{{ price }}€</p>
-        </div>
-        <div class="col-3">
-            <span><input type="checkbox"> Agregar</span>
-        </div>
+<div class="card d-flex">
+  <div class="d-flex align-items-center container">
+    <div class="col-6 container-text">
+      <h3>{{ title }}</h3>
+      <p>{{ subtitle }}</p>
     </div>
+    <div class="col-3 justify-content-center d-flex justify-content-center">
+      <p class="price">{{ price }}€</p>
+    </div>
+    <div class="col-3 d-flex justify-content-center">
+      <span><input type="checkbox" /> Agregar</span>
+    </div>
+  </div>
 </div>
