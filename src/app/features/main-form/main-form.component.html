@@ -4,5 +4,6 @@
     [title]="card.title" 
     [subtitle]="card.subtitle" 
     [price]="card.price">
+    <input type="checkbox" [checked]="card.selected" (change)="selection(card.title)">
     </app-card>
 </div>
