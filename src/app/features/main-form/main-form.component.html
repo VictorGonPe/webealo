@@ -1,0 +1,8 @@
+<div class="form">
+    <app-card 
+    *ngFor="let card of cards()" 
+    [title]="card.title" 
+    [subtitle]="card.subtitle" 
+    [price]="card.price">
+    </app-card>
+</div>
