@@ -1,1 +1,13 @@
-<p>card works!</p>
+<div class="card">
+    <div class="d-flex justify-content-around align-items-center">
+        <div class="md-col-6">
+            <app-title-card [title]="title" [subtitle]="subtitle"></app-title-card>
+        </div>
+        <div class="col-3">
+            <p class="price">{{ price }}€</p>
+        </div>
+        <div class="col-2">
+            <span><input type="checkbox"> Agregar</span>
+        </div>
+    </div>
+</div>
