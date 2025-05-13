@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
-import { TitleCardComponent } from '../title-card/title-card.component';
 
 @Component({
   selector: 'app-card',
   standalone:true,
-  imports: [TitleCardComponent],
+  imports: [],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
