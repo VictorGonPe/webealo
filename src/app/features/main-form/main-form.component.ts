@@ -1,11 +1,12 @@
 import { Component, signal, computed, WritableSignal } from '@angular/core';
 import { CardComponent } from '../../shared/ui/card/card.component';
 import { CommonModule } from '@angular/common';
+import { PanelComponent } from '../../shared/ui/panel/panel.component';
 
 @Component({
   selector: 'app-main-form',
   standalone: true,
-  imports: [CardComponent, CommonModule],
+  imports: [CardComponent, CommonModule, PanelComponent],
   templateUrl: './main-form.component.html',
   styleUrl: './main-form.component.scss'
 })
