@@ -1,5 +1,5 @@
-<div class="container">
-    <div><label>Número de páginas</label></div>
-    <div><app-button [textButton]="'-'"></app-button><input type="number"><app-button [textButton]="'+'"></app-button>
+<div class="container d-flex justify-content-end">
+    <div><label>{{ textPanel }}</label></div>
+    <div class="d-flex"><app-button [textButton]="'-'"></app-button><input type="number"><app-button [textButton]="'+'"></app-button>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonComponent } from "../button/button.component";
 
 @Component({
@@ -9,5 +9,5 @@ import { ButtonComponent } from "../button/button.component";
   styleUrl: './panel.component.scss'
 })
 export class PanelComponent {
-
+  @Input() textPanel!:string;
 }

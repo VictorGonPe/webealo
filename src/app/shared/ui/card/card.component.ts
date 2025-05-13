@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { PanelComponent } from "../panel/panel.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-card',
   standalone:true,
-  imports: [],
+  imports: [PanelComponent,CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })

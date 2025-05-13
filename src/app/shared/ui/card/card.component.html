@@ -8,7 +8,18 @@
       <p class="price">{{ price }}€</p>
     </div>
     <div class="col-3 d-flex justify-content-center">
-      <label><input type="checkbox" [checked]="selected" (change)="onCheckboxChange()"> Agregar</label>
+      <label
+        ><input
+          type="checkbox"
+          [checked]="selected"
+          (change)="onCheckboxChange()"
+        />
+        Agregar</label
+      >
     </div>
+  </div>
+  <div class="panel" *ngIf="selected && title === 'Web'">
+    <app-panel [textPanel]="'Número de páginas'"></app-panel>
+    <app-panel [textPanel]="'Número de idiomas'"></app-panel>
   </div>
 </div>
