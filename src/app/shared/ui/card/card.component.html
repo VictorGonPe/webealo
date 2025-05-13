@@ -8,7 +8,7 @@
       <p class="price">{{ price }}€</p>
     </div>
     <div class="col-3 d-flex justify-content-center">
-      <label><ng-content></ng-content> Agregar</label>
+      <label><input type="checkbox" [checked]="selected" (change)="onCheckboxChange()"> Agregar</label>
     </div>
   </div>
 </div>

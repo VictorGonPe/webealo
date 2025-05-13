@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -11,5 +10,12 @@ import { Input } from '@angular/core';
 export class CardComponent {
   @Input() title: string = '';
   @Input() subtitle: string = '';
-  @Input() price!:number;
+  @Input() price!: number;
+  @Input() selected: boolean = false;
+
+  @Output() selectedChange = new EventEmitter<string>();
+
+  onCheckboxChange() {
+    this.selectedChange.emit(this.title);
+  }
 }
