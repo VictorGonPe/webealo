@@ -2,9 +2,17 @@
     margin: 3rem;
 }
 
+p {
+    width: 85%;
+}
 
 @media (max-width: 768px) {
     .form {
         margin: 1.5rem;
     }
+
+    p {
+        width: 100%;
+    }
 }
+
