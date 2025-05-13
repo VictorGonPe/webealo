@@ -1,0 +1,13 @@
+<div class="form">
+    <app-card 
+    *ngFor="let card of cards()" 
+    [title]="card.title" 
+    [subtitle]="card.subtitle" 
+    [price]="card.price">
+    <input type="checkbox" [checked]="card.selected" (change)="selection(card.title)">
+    </app-card>
+    <div>
+        <p class="d-flex justify-content-end fs-5">Total presupuestado: <b class="ps-5">{{ totalSelected() }}€</b></p>
+    </div>
+
+</div>

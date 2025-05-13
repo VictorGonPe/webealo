@@ -1,1 +1,14 @@
-<p>card works!</p>
+<div class="card d-flex">
+  <div class="d-flex align-items-center container">
+    <div class="col-6 container-text">
+      <h3>{{ title }}</h3>
+      <p>{{ subtitle }}</p>
+    </div>
+    <div class="col-3 justify-content-center d-flex justify-content-center">
+      <p class="price">{{ price }}€</p>
+    </div>
+    <div class="col-3 d-flex justify-content-center">
+      <label><ng-content></ng-content> Agregar</label>
+    </div>
+  </div>
+</div>
