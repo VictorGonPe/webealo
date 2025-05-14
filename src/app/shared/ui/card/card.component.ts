@@ -23,6 +23,10 @@ export class CardComponent {
 
   onCheckboxChange() {
     this.selectedChange.emit(this.title);
+
+    if (this.title === 'Web' && this.selected) {
+    this.resetPanels();
+  }
   }
 
   get totalPanelPrice(): number {
@@ -41,6 +45,12 @@ export class CardComponent {
 
   emitCombinatedTotal() {
     this.extraTotalPrice.emit(this.totalPanelPrice);
+  }
+
+  resetPanels() {
+    this.totalPages = 0;
+    this.totalLenguages = 0;
+    this.emitCombinatedTotal();
   }
 
 }
