@@ -53,6 +53,6 @@ export class MainFormComponent {
   onFinalPrice(extra: number) {
     this.finalExtraPrice.set(extra);
   }
-
+  
   finalTotal = computed(() => this.totalSelected() + this.finalExtraPrice());
 }

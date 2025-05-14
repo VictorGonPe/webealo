@@ -27,8 +27,7 @@ export class PanelComponent {
   }
 
   emitPrice() {
-    const price = this.numberPanel * 30;
-    this.totalPanelPrice.emit(price);
+      const price = (this.numberPanel - 1) * 30;
+      this.totalPanelPrice.emit(price);
   }
-
 }
