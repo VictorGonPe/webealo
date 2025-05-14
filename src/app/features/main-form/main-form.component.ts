@@ -27,7 +27,7 @@ export class MainFormComponent {
     {
       title: 'Web',
       subtitle: 'Desarrollo de una web responsive optimizada para todos los dispositivos',
-      price: 400,
+      price: 500,
       selected: false
     }
   ]);
@@ -47,4 +47,12 @@ export class MainFormComponent {
       .filter(card => card.selected)
       .reduce((sum, card) => sum + card.price, 0)
   );
+
+  finalExtraPrice = signal(0);
+
+  onFinalPrice(extra: number) {
+    this.finalExtraPrice.set(extra);
+  }
+
+  finalTotal = computed(() => this.totalSelected() + this.finalExtraPrice());
 }
