@@ -16,8 +16,31 @@ export class CardComponent {
   @Input() selected: boolean = false;
 
   @Output() selectedChange = new EventEmitter<string>();
+  @Output() extraTotalPrice = new EventEmitter<number>();
+
+  totalPages: number = 0;
+  totalLenguages: number = 0;
 
   onCheckboxChange() {
     this.selectedChange.emit(this.title);
   }
+
+  get totalPanelPrice(): number {
+    return this.totalPages + this.totalLenguages;
+  }
+
+  onPanelPrice1(pricePanel: number) {
+    this.totalPages = pricePanel;
+    this.emitCombinatedTotal();
+  }
+
+  onPanelPrice2(pricePanel: number) {
+    this.totalLenguages = pricePanel;
+    this.emitCombinatedTotal();
+  }
+
+  emitCombinatedTotal() {
+    this.extraTotalPrice.emit(this.totalPanelPrice);
+  }
+
 }
