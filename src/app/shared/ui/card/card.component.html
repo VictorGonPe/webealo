@@ -18,8 +18,8 @@
       >
     </div>
   </div>
-  <div class="panel" *ngIf="selected && title === 'Web'">
-    <app-panel [textPanel]="'Número de páginas'"></app-panel>
-    <app-panel [textPanel]="'Número de idiomas'"></app-panel>
+  <div class="panel mt-2" *ngIf="selected && title === 'Web'">
+    <app-panel [textPanel]="'Número de páginas'" (totalPanelPrice)="onPanelPrice1($event)"></app-panel>
+    <app-panel [textPanel]="'Número de idiomas'" (totalPanelPrice)="onPanelPrice2($event)"></app-panel>
   </div>
 </div>
