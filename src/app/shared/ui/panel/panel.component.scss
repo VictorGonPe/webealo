@@ -7,3 +7,30 @@ span {
 label {
     margin-right: 2rem;
 }
+
+.modal-content {
+    position: absolute;
+    width: 80%;
+    right: 0px;
+    top: -4rem;
+    background-color: rgb(7, 77, 116);
+    color: white;
+    z-index: 10;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.modal-button{
+    border: 1px solid white ;
+    color: white;
+}
