@@ -1,5 +1,17 @@
-<!-- <div class="popup" (click)="$event.stopPropagation()">
-    <h5>Número de páginas</h5>
-    <p>Esto representa el {{ textPanel.toLowerCase() }} que se incluirán en el proyecto. Cada lenguajes adicional sumará 30 €.</p>
-    <button class="btn-close" (click)="closeInfo()">Cerrar</button>
-</div> -->
+<div class="modal-content rounded-4 shadow d-flex" (click)="closeModal()">
+  <div class="modal-header" (click)="$event.stopPropagation()">
+    <h5 class="modal-title p-3 pt-5">{{ title }}</h5>
+  </div>
+  <div class="modal-body">
+    <p class="d-flex justify-content-center p-3">
+      {{ body }}
+    </p>
+    <button
+      type="button"
+      class="btn btn-primary modal-button m-3"
+      (click)="closeModal()"
+    >
+      Cerrar
+    </button>
+  </div>
+</div>

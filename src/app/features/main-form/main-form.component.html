@@ -3,7 +3,7 @@
     *ngFor="let card of cards()" 
     [title]="card.title" 
     [subtitle]="card.subtitle" 
-    [price]="card.price"
+    [basePrice]="card.price"
     [selected]="card.selected"
     (selectedChange)="selection($event)" 
     (extraTotalPrice)="onFinalPrice($event)">

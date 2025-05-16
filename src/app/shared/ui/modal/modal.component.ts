@@ -1,12 +1,21 @@
-import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-modal',
+  standalone: true,
   imports: [],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss'
 })
 export class ModalComponent {
-  @Input() textContent!: string;
-  @Input() aditionalPrice!: number;
+  @Input() title!: string;
+  @Input() body!: string;
+  @Input() priceModal!: number;
+  @Output() close = new EventEmitter<void>();
+
+  closeModal() {
+    this.close.emit();
+  }
 }

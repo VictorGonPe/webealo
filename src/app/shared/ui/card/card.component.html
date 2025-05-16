@@ -5,7 +5,7 @@
       <p>{{ subtitle }}</p>
     </div>
     <div class="col-3 justify-content-center d-flex justify-content-center">
-      <p class="price">{{ price }}€</p>
+      <p class="price">{{ basePrice }}€</p>
     </div>
     <div class="col-3 d-flex justify-content-center">
       <label
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="panel mt-2" *ngIf="selected && title === 'Web'">
-    <app-panel [textPanel]="'Número de páginas'" (totalPanelPrice)="onPanelPrice1($event)"></app-panel>
-    <app-panel [textPanel]="'Número de idiomas'" (totalPanelPrice)="onPanelPrice2($event)"></app-panel>
+    <app-panel [textPanel]="'Número de páginas'" [unitPrice]="30" (totalPanelPrice)="onPanelPrice1($event)"></app-panel>
+    <app-panel [textPanel]="'Número de idiomas'" [unitPrice]="30" (totalPanelPrice)="onPanelPrice2($event)"></app-panel>
   </div>
 </div>
