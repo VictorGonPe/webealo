@@ -20,10 +20,9 @@ describe('PanelComponent', () => {
   it('should emit the correct total price when increased', () => {
     spyOn(component.totalPanelPrice, 'emit');
 
-    component.increase(); // número pasa de 1 a 2
-    component.increase(); // número pasa de 2 a 3
+    component.increase(); 
+    component.increase(); 
 
-    // (3 - 1) * 30 = 60
     expect(component.totalPanelPrice.emit).toHaveBeenCalledWith(60);
   });
 

@@ -4,11 +4,11 @@ import { Injectable, signal } from "@angular/core";
 @Injectable({ providedIn: 'root' })
 
 export class BudgetService {
-    
+
     private budgetsSignal = signal<Budget[]>([]);
 
     get budgets() {
-        return this.budgetsSignal.asReadonly(); // solo lectura desde fuera
+        return this.budgetsSignal.asReadonly(); 
     }
 
     addBudget(budget: Budget) {
