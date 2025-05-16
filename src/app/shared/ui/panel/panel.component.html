@@ -1,5 +1,19 @@
 <div class="container mt-2 d-flex justify-content-end">
-    <div><label>{{ textPanel }}</label></div>
-    <div class="d-flex"><app-button [textButton]="'-'" (click)="decrease()"></app-button><span><div class="text-center">{{ numberPanel }}</div></span><app-button [textButton]="'+'" (click)="increase()"></app-button>
+    <div class="d-flex"><app-button [textButton]="'i'" (click)="openInfo()"></app-button><label>{{ textPanel }}</label>
+    </div>
+    <div class="d-flex"><app-button [textButton]="'-'" (click)="decrease()"></app-button><span>
+            <div class="text-center">{{ numberPanel }}</div>
+        </span><app-button [textButton]="'+'" (click)="increase()"></app-button>
+    </div>
+</div>
+
+<div *ngIf="showInfo" class="modal-content rounded-4 shadow d-flex" (click)="closeInfo()">
+    <div class="modal-header" (click)="$event.stopPropagation()">
+        <h5 class="modal-title p-3 pt-5">{{ textPanel }}</h5>
+    </div>
+    <div class="modal-body">
+        <p class="d-flex justify-content-center p-3">Esto representa el {{ textPanel.toLowerCase() }} que se incluirán en el proyecto. Cada elemento adicional
+            sumará 30 €.</p>
+        <button type="button" class="btn modal-button m-3" data-bs-dismiss="modal" (click)="closeInfo()">Cerrar</button>
     </div>
 </div>
