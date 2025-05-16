@@ -13,8 +13,9 @@ label {
     width: 80%;
     right: 0px;
     top: -4rem;
-    background-color: rgb(7, 77, 116);
+    background-color: rgb(45, 45, 45);
     color: white;
+    border: 1px solid rgb(0, 64, 255);
     z-index: 10;
 }
 
@@ -31,6 +32,11 @@ label {
 }
 
 .modal-button{
+    background-color: rgb(0, 64, 255);
     border: 1px solid white ;
     color: white;
+    &:hover {
+        background-color: rgb(0, 132, 255); 
+    }
 }
+
