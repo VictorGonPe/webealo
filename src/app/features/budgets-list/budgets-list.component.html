@@ -1,0 +1,12 @@
+<h3>Presupuestos guardados</h3>
+<ul *ngIf="budgets().length; else empty">
+  <li *ngFor="let b of budgets()">
+    <strong>{{ b.clientName }}</strong> ({{ b.email }}) - {{ b.total }} €
+    <br />
+    Servicios: {{ b.services.join(", ") }}
+  </li>
+</ul>
+<ng-template #empty>
+  <p>No hay presupuestos todavía.</p>
+</ng-template>
+
