@@ -1,14 +1,45 @@
 <div class="form">
-    <app-card 
-    *ngFor="let card of cards()" 
-    [title]="card.title" 
-    [subtitle]="card.subtitle" 
+  <app-card
+    *ngFor="let card of cards()"
+    [title]="card.title"
+    [subtitle]="card.subtitle"
     [basePrice]="card.price"
     [selected]="card.selected"
-    (selectedChange)="selection($event)" 
-    (extraTotalPrice)="onFinalPrice($event)">
-    </app-card>
-    <div>
-        <p class="d-flex justify-content-end fs-5">Total presupuestado: <b class="ps-5">{{ totalSelected() + finalExtraPrice() }}€</b></p>
+    (selectedChange)="selection($event)"
+    (extraTotalPrice)="onFinalPrice($event)"
+  >
+  </app-card>
+  <div>
+    <p class="d-flex justify-content-end fs-5">
+      Total presupuestado:
+      <b class="ps-5">{{ totalSelected() + finalExtraPrice() }}€</b>
+    </p>
+  </div>
+  <!-- Formulario que aparece solo si hay algo seleccionado -->
+  <div *ngIf="showClientForm()">
+    <h3>Datos del cliente</h3>
+    <div class="form-group mb-2">
+      <label>Nombre</label>
+      <input type="text" (input)="updateSignalFromInput(clientName, $event)" />
     </div>
+
+    <div class="form-group mb-2">
+      <label>Teléfono</label>
+      <input type="tel" (input)="updateSignalFromInput(clientPhone, $event)" />
+    </div>
+
+    <div class="form-group mb-2">
+      <label>Email</label>
+      <input type="email" (input)="updateSignalFromInput(clientEmail, $event)" />
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <p>
+        <strong>Total: {{ finalTotal() }} €</strong>
+      </p>
+      <button class="btn btn-primary" (click)="saveBudget()">
+        Guardar presupuesto
+      </button>
+    </div>
+  </div>
 </div>
