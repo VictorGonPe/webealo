@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik+Iso&display=swap");
 
 .card {
+    flex-direction: row;
     margin-top: 60px;
     padding: 10px;
     border-color: #374c96;
@@ -10,36 +11,21 @@
     width: 70%;
     margin: auto;
     margin-top: 3rem;
-    margin-bottom: 10rem;
-
+    margin-bottom: 3rem;
     p {
         margin-bottom: 0px;
     }
 }
 
-ul {
-    list-style: none;
+.form-group {
+    margin: 10px;
 }
 
 h3 {
-    color: #374c96;
     font-family: 'Audiowide';
+    color: #374c96;;
 }
 
-.sub-card {
-    padding: 10px;
-    box-shadow: 1px 1px 1px 1px #deb326;
-    border-radius: 10px;
-    width: 90%;
-    margin: auto;
-    margin-block: 2rem;
-    list-style: none;
-
-    p {
-        margin-bottom: 0px;
-    }
-
-}
 
 @media (max-width: 768px) {
     .card {
