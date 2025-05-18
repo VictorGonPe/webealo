@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, WritableSignal, Input } from '@angular/core';
 
 @Component({
   selector: 'app-client-form',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './client-form.component.html',
   styleUrl: './client-form.component.scss'
 })
 export class ClientFormComponent {
+  @Input({ required: true }) name!: WritableSignal<string>;
+  @Input({ required: true }) phone!: WritableSignal<string>;
+  @Input({ required: true }) email!: WritableSignal<string>;
 
+  updateSignal(signal: WritableSignal<string>, event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    signal.set(value);
+  }
 }
