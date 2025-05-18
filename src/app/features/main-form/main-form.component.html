@@ -20,14 +20,28 @@
     [name]="clientName"
     [phone]="clientPhone"
     [email]="clientEmail"
+    [formTouched]="formTouched"
+    [isNameValid]="isNameValid"
+    [isPhoneValid]="isPhoneValid"
+    [isEmailValid]="isEmailValid"
   ></app-client-form>
 
-  <div class="d-flex justify-content-between align-items-center mt-3">
+  <div class="getBudget d-flex">
     <p>
       <strong>Total: {{ finalTotal() }} €</strong>
     </p>
-    <button class="btn btn-primary" (click)="saveBudget()">
-      Guardar presupuesto
+    <button
+      class="btn btn-warning font-weight-bold w-75"
+      (click)="saveBudget()"
+    >
+      Solicitar presupuesto
     </button>
   </div>
+  <app-modal
+    *ngIf="showWarningModal()"
+    [title]="warningTitle()"
+    [body]="warningBody()"
+    (close)="showWarningModal.set(false)"
+  ></app-modal>
+  <app-budgets-list></app-budgets-list>
 </div>

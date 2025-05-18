@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik+Iso&display=swap");
+
+.card {
+    flex-direction: row;
+    margin-top: 60px;
+    padding: 10px;
+    border-color: #374c96;
+    border:none;
+    box-shadow: 1px 1px 1px 1px #374c96;
+    width: 70%;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    p {
+        margin-bottom: 0px;
+    }
+}
+
+.form-group {
+    margin: 10px;
+}
+
+h3 {
+    font-family: 'Audiowide';
+    color: #374c96;;
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}

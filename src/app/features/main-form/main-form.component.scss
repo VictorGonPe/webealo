@@ -1,18 +1,25 @@
 .form {
-    margin: 3rem;
+  margin: 3rem;
 }
 
 p {
-    width: 85%;
+  width: 85%;
+}
+
+.getBudget {
+  width: 60%;
+  margin: auto;
 }
 
 @media (max-width: 768px) {
-    .form {
-        margin: 1.5rem;
-    }
+  .form {
+    margin: 1.5rem;
+  }
 
-    p {
-        width: 100%;
-    }
+  p {
+    width: 100%;
+  }
+  .getBudget {
+    width: 100%;
+  }
 }
-
