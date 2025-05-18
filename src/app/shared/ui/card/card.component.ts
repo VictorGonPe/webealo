@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class CardComponent {
   @Input() title: string = '';
   @Input() subtitle: string = '';
-  @Input() price!: number;
+  @Input() basePrice!: number;
   @Input() selected: boolean = false;
 
   @Output() selectedChange = new EventEmitter<string>();

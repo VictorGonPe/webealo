@@ -1,0 +1,16 @@
+<div class="card">
+  <h3>Presupuestos en cursos</h3>
+  <ul class="p-0" *ngIf="budgets().length; else empty"> 
+    <li *ngFor="let b of budgets()">
+      <div class="sub-card">
+        <strong>{{ b.clientName }}</strong> ({{ b.email }}) - {{ b.total }} €
+        <br />
+        Servicios: {{ b.services.join(", ") }}
+      </div>
+    </li>
+  </ul>
+  <ng-template #empty>
+    <p>No hay presupuestos todavía.</p>
+  </ng-template>
+</div>
+

@@ -1,0 +1,42 @@
+<div class="card d-flex">
+  <h3>Pedir presupuesto</h3>
+
+  <div class="form-group mb-2">
+    <label>Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      [value]="name()"
+      (input)="updateSignal(name, $event)"
+    />
+    <small class="text-danger" *ngIf="formTouched() && !isNameValid()">
+      El nombre es obligatorio.
+    </small>
+  </div>
+
+  <div class="form-group mb-2">
+    <label>Teléfono</label>
+    <input
+      type="tel"
+      class="form-control"
+      [value]="phone()"
+      (input)="updateSignal(phone, $event)"
+    />
+    <small class="text-danger" *ngIf="formTouched() && !isPhoneValid()">
+      El teléfono es obligatorio.
+    </small>
+  </div>
+
+  <div class="form-group mb-2">
+    <label>Email</label>
+    <input
+      type="email"
+      class="form-control"
+      [value]="email()"
+      (input)="updateSignal(email, $event)"
+    />
+    <small class="text-danger" *ngIf="formTouched() && !isEmailValid()">
+      Introduce un email válido.
+    </small>
+  </div>
+</div>

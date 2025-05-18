@@ -6,7 +6,8 @@ img {
 }
 .title {
   font-family: "Audiowide", sans-serif;
-  color: #374c96;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #374c96;
   font-size: 2rem;
   padding-top: 2rem;
 }

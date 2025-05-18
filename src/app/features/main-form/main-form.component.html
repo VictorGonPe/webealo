@@ -1,14 +1,47 @@
 <div class="form">
-    <app-card 
-    *ngFor="let card of cards()" 
-    [title]="card.title" 
-    [subtitle]="card.subtitle" 
-    [price]="card.price"
+  <app-card
+    *ngFor="let card of cards()"
+    [title]="card.title"
+    [subtitle]="card.subtitle"
+    [basePrice]="card.price"
     [selected]="card.selected"
-    (selectedChange)="selection($event)" 
-    (extraTotalPrice)="onFinalPrice($event)">
-    </app-card>
-    <div>
-        <p class="d-flex justify-content-end fs-5">Total presupuestado: <b class="ps-5">{{ totalSelected() + finalExtraPrice() }}€</b></p>
-    </div>
+    (selectedChange)="selection($event)"
+    (extraTotalPrice)="onFinalPrice($event)"
+  >
+  </app-card>
+  <div>
+    <p class="d-flex justify-content-end fs-5">
+      Total presupuestado:
+      <b class="ps-5">{{ totalSelected() + finalExtraPrice() }}€</b>
+    </p>
+  </div>
+  <!-- Formulario que aparece solo si hay algo seleccionado -->
+  <app-client-form
+    [name]="clientName"
+    [phone]="clientPhone"
+    [email]="clientEmail"
+    [formTouched]="formTouched"
+    [isNameValid]="isNameValid"
+    [isPhoneValid]="isPhoneValid"
+    [isEmailValid]="isEmailValid"
+  ></app-client-form>
+
+  <div class="getBudget d-flex">
+    <p>
+      <strong>Total: {{ finalTotal() }} €</strong>
+    </p>
+    <button
+      class="btn btn-warning font-weight-bold w-75"
+      (click)="saveBudget()"
+    >
+      Solicitar presupuesto
+    </button>
+  </div>
+  <app-modal
+    *ngIf="showWarningModal()"
+    [title]="warningTitle()"
+    [body]="warningBody()"
+    (close)="showWarningModal.set(false)"
+  ></app-modal>
+  <app-budgets-list></app-budgets-list>
 </div>
