@@ -4,5 +4,7 @@ export interface Budget {
   phone: string;
   email: string;
   services: string[];
+  numPages: number;
+  numLanguages: number;
   total: number;
 }

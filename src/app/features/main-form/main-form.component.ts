@@ -5,12 +5,13 @@ import { BudgetService } from '../../core/services/budget.service';
 import { BudgetsListComponent } from "../budgets-list/budgets-list.component";
 import { ClientFormComponent } from "../client-form/client-form.component";
 import { ModalComponent } from '../../shared/ui/modal/modal.component';
+import { PanelComponent } from '../../shared/ui/panel/panel.component';
 
 
 @Component({
   selector: 'app-main-form',
   standalone: true,
-  imports: [CardComponent, CommonModule, ClientFormComponent, BudgetsListComponent, ModalComponent],
+  imports: [CardComponent, CommonModule, ClientFormComponent, BudgetsListComponent, ModalComponent, PanelComponent],
   templateUrl: './main-form.component.html',
   styleUrl: './main-form.component.scss'
 })
@@ -20,6 +21,9 @@ export class MainFormComponent {
   clientName: WritableSignal<string> = signal('');
   clientPhone: WritableSignal<string> = signal('');
   clientEmail: WritableSignal<string> = signal('');
+  //totalPages: WritableSignal<number> = signal(0);
+  totalPages!: number;
+  totalLanguages: WritableSignal<number> = signal(1);
 
   isNameValid = computed(() => this.clientName().trim().length > 0);
   isPhoneValid = computed(() => this.clientPhone().trim().length > 0);
@@ -117,6 +121,8 @@ export class MainFormComponent {
       phone: this.clientPhone(),
       email: this.clientEmail(),
       services: this.getSelectedTitles(),
+      numPages: this.totalPages,
+      numLanguages: this.totalLanguages(),
       total: this.finalTotal()
     });
 
