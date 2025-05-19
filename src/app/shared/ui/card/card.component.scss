@@ -13,8 +13,14 @@
     p {
         margin-bottom: 0px;
     }
+    &--selected {
+        box-shadow: 1px 1px 1px 1px #ffc400;
+    }
 }
 
+input {
+    accent-color: #ffc400;
+}
 
 
 @media (max-width: 768px) {
