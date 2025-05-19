@@ -21,9 +21,8 @@ export class MainFormComponent {
   clientName: WritableSignal<string> = signal('');
   clientPhone: WritableSignal<string> = signal('');
   clientEmail: WritableSignal<string> = signal('');
-  //totalPages: WritableSignal<number> = signal(0);
   totalPages!: number;
-  totalLanguages: WritableSignal<number> = signal(1);
+  totalLanguages!: number;
 
   isNameValid = computed(() => this.clientName().trim().length > 0);
   isPhoneValid = computed(() => this.clientPhone().trim().length > 0);
@@ -111,9 +110,7 @@ export class MainFormComponent {
       return;
     }
 
-    if (!this.isFormValid()) {
-      return;
-    }
+    if (!this.isFormValid()) return;
 
 
     this.budgetService.addBudget({
@@ -121,8 +118,8 @@ export class MainFormComponent {
       phone: this.clientPhone(),
       email: this.clientEmail(),
       services: this.getSelectedTitles(),
-      numPages: this.totalPages,
-      numLanguages: this.totalLanguages(),
+      pages: this.budgetService.pages(),
+      languages: this.budgetService.languages(),
       total: this.finalTotal()
     });
 
@@ -130,5 +127,7 @@ export class MainFormComponent {
     this.clientPhone.set('');
     this.clientEmail.set('');
     this.formTouched.set(false);
+    this.budgetService.pages.set(0);
+    this.budgetService.languages.set(0);
   }
 }

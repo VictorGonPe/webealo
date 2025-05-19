@@ -12,7 +12,7 @@
         <div class="section-two">
           <div>Servicios contratados: </div>
           <div>{{ b.services.join(", ") }}</div>
-          <div>{{ b.numPages }}</div>
+          <div *ngIf="b.services.includes('Web')">({{ b.pages }} páginas - {{ b.languages }} idiomas)</div>
         </div>
 
         <div class="section-three justify-content-end">
