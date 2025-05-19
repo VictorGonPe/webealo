@@ -7,4 +7,5 @@ export interface Budget {
   pages: number;
   languages: number;
   total: number;
+  addDate?: Date;
 }

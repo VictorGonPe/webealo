@@ -77,7 +77,11 @@ export class BudgetService {
     }
 
     addBudget(budget: Budget) {
-        this.budgetsSignal.update(prev => [...prev, budget]);
+        const newBudget = {
+            ...budget,
+            addDate: new Date()
+        };
+        this.budgetsSignal.update(prev => [...prev, newBudget]);
     }
 
     saveBudget() {
@@ -105,6 +109,7 @@ export class BudgetService {
 
         this.reset();
     }
+   
 
     reset() {
         this.clientName.set('');
@@ -114,7 +119,7 @@ export class BudgetService {
         this.pages.set(1);
         this.languages.set(1);
         this.finalExtraPrice.set(0);
-        
+
         this.cards.update(cards =>
             cards.map(c => ({ ...c, selected: false }))
         );
