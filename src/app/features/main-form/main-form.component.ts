@@ -38,7 +38,6 @@ export class MainFormComponent {
     this.isNameValid() && this.isPhoneValid() && this.isEmailValid()
   );
 
-  // Inyectar el servicio
   budgetService = inject(BudgetService);
 
   cards: WritableSignal<{ title: string; subtitle: string; price: number; selected: boolean }[]> = signal([

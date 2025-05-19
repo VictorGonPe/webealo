@@ -2,10 +2,22 @@
   <h3>Presupuestos en cursos</h3>
   <ul class="p-0" *ngIf="budgets().length; else empty"> 
     <li *ngFor="let b of budgets()">
-      <div class="sub-card">
-        <strong>{{ b.clientName }}</strong> ({{ b.email }}) - {{ b.total }} €
-        <br />
-        Servicios: {{ b.services.join(", ") }}
+      <div class="sub-card d-flex justify-content-between p-4">
+        <div>
+          <div><strong>{{ b.clientName }}</strong></div>
+          <div>{{ b.email }}</div>
+          <div>{{b.phone}}</div>
+        </div>
+
+        <div class="section-two">
+          <div>Servicios contratados: </div>
+          <div>{{ b.services.join(", ") }}</div>
+        </div>
+
+        <div class="section-three justify-content-end">
+          <div>Total:</div>
+            <div><span class="fs-4"><b>{{ b.total }}</b></span> €</div>
+        </div>
       </div>
     </li>
   </ul>
