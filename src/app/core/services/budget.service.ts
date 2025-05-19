@@ -114,5 +114,9 @@ export class BudgetService {
         this.pages.set(1);
         this.languages.set(1);
         this.finalExtraPrice.set(0);
+        
+        this.cards.update(cards =>
+            cards.map(c => ({ ...c, selected: false }))
+        );
     }
 }

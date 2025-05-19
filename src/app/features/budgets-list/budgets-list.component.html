@@ -1,29 +1,31 @@
-<div class="card">
-  <h3>Presupuestos en cursos</h3>
-  <ul class="p-0" *ngIf="budgets().length; else empty"> 
-    <li *ngFor="let b of budgets()">
-      <div class="sub-card d-flex justify-content-between p-4">
-        <div>
-          <div><strong>{{ b.name }}</strong></div>
-          <div>{{ b.email }}</div>
-          <div>{{b.phone}}</div>
+<div class="card-container">
+  <div class="card d-flex">
+    <h3>Presupuestos en cursos</h3>
+    <ul class="p-0" *ngIf="budgets().length; else empty">
+      <li *ngFor="let b of budgets()">
+        <div class="sub-card d-flex justify-content-between p-4">
+          <div>
+            <div><strong>{{ b.name }}</strong></div>
+            <div>{{ b.email }}</div>
+            <div>{{b.phone}}</div>
+          </div>
+  
+          <div class="section-two">
+            <div>Servicios contratados: </div>
+            <div>{{ b.services.join(", ") }}</div>
+            <div *ngIf="b.services.includes('Web')">({{ b.pages }} páginas - {{ b.languages }} idiomas)</div>
+          </div>
+  
+          <div class="section-three justify-content-end">
+            <div>Total:</div>
+              <div><span class="fs-4"><b>{{ b.total }}</b></span> €</div>
+          </div>
         </div>
-
-        <div class="section-two">
-          <div>Servicios contratados: </div>
-          <div>{{ b.services.join(", ") }}</div>
-          <div *ngIf="b.services.includes('Web')">({{ b.pages }} páginas - {{ b.languages }} idiomas)</div>
-        </div>
-
-        <div class="section-three justify-content-end">
-          <div>Total:</div>
-            <div><span class="fs-4"><b>{{ b.total }}</b></span> €</div>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <ng-template #empty>
-    <p>No hay presupuestos todavía.</p>
-  </ng-template>
+      </li>
+    </ul>
+    <ng-template #empty>
+      <p>No hay presupuestos todavía.</p>
+    </ng-template>
+  </div>
 </div>
 
