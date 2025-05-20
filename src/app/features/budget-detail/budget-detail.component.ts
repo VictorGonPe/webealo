@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BudgetService } from '../../core/services/budget.service';
 import { CommonModule } from '@angular/common';
@@ -14,7 +14,14 @@ export class BudgetDetailComponent {
   private route = inject(ActivatedRoute);
   private budgetService = inject(BudgetService);
 
-  index = Number(this.route.snapshot.paramMap.get('index'));
-  budget = this.budgetService.budgets()[this.index];
+  budget = signal<any>(null);
 
+  constructor() {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      const found = this.budgetService.budgets().find(b => b.id === id);
+      this.budget.set(found ?? null);
+    });
+
+  }
 }

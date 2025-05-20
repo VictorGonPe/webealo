@@ -16,7 +16,7 @@
 
     <ul class="p-0" *ngIf="budgets().length; else empty">
       <li *ngFor="let b of sortedBudgets(); let i = index">
-        <a [routerLink]="['/presupuesto', i]">
+        <a [routerLink]="['/presupuesto', b.id]">
           <div class="sub-card d-flex justify-content-between p-4">
             <div>
               <div>

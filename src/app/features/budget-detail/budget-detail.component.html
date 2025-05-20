@@ -1,14 +1,16 @@
-<div *ngIf="budget; else notFound">
-    <h2>Presupuesto de {{ budget.name }}</h2>
-    <p>Email: {{ budget.email }}</p>
-    <p>Teléfono: {{ budget.phone }}</p>
-    <p>Servicios: {{ budget.services.join(', ') }}</p>
-    <p *ngIf="budget.services.includes('Web')">
-        Incluye Web: {{ budget.pages }} páginas, {{ budget.languages }} idiomas
-    </p>
-    <p>Total: {{ budget.total }} €</p>
+<div *ngIf="budget(); else notFound">
+  <h2>Presupuesto de {{ budget().name }}</h2>
+  <p>Email: {{ budget().email }}</p>
+  <p>Teléfono: {{ budget().phone }}</p>
+  <ul>
+    <li *ngFor="let s of budget().services">{{ s }}</li>
+  </ul>
+  <p *ngIf="budget().services.includes('Web')">
+    Incluye Web: {{ budget().pages }} páginas, {{ budget().languages }} idiomas
+  </p>
+  <p>Total: {{ budget().total }} €</p>
 </div>
 
 <ng-template #notFound>
-    <p>Presupuesto no encontrado.</p>
+  <p>Presupuesto no encontrado.</p>
 </ng-template>

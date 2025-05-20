@@ -4,5 +4,5 @@ import { BudgetDetailComponent } from './features/budget-detail/budget-detail.co
 
 export const routes: Routes = [
     { path: '', component: BudgetsListComponent },
-    { path: 'presupuesto/:index', component: BudgetDetailComponent }
+    { path: 'presupuesto/:id', component: BudgetDetailComponent }
 ];
