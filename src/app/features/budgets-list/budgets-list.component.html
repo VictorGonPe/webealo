@@ -1,18 +1,20 @@
+<div class="button-container">
+  <div class="sort-buttons d-flex gap-2 mb-0">
+    <button (click)="setSort('date')" class="btn btn-outline-primary btn-sm">
+      Fecha
+    </button>
+    <button (click)="setSort('price')" class="btn btn-outline-primary btn-sm">
+      Precio
+    </button>
+    <button (click)="setSort('name')" class="btn btn-outline-primary btn-sm">
+      Nombre
+    </button>
+  </div>
+</div>
+
 <div class="card-container">
   <div class="card d-flex">
     <h3>Presupuestos en cursos</h3>
-
-    <div class="sort-buttons d-flex gap-2 mb-3">
-      <button (click)="setSort('date')" class="btn btn-outline-primary btn-sm">
-        Fecha
-      </button>
-      <button (click)="setSort('price')" class="btn btn-outline-primary btn-sm">
-        Precio
-      </button>
-      <button (click)="setSort('name')" class="btn btn-outline-primary btn-sm">
-        Nombre
-      </button>
-    </div>
 
     <ul class="p-0" *ngIf="budgets().length; else empty">
       <li *ngFor="let b of sortedBudgets(); let i = index">

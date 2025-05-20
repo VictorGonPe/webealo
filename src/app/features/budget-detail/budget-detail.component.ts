@@ -22,6 +22,5 @@ export class BudgetDetailComponent {
       const found = this.budgetService.budgets().find(b => b.id === id);
       this.budget.set(found ?? null);
     });
-
   }
 }

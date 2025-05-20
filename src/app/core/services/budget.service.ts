@@ -4,22 +4,6 @@ import { computed, Injectable, signal } from "@angular/core";
 @Injectable({ providedIn: 'root' })
 export class BudgetService {
 
-    constructor() {
-        const saved = localStorage.getItem('budgets');
-        if (saved) {
-            try {
-                const parsed = JSON.parse(saved).map((b: any) => ({
-                    ...b,
-                    addDate: b.addDate ? new Date(b.addDate) : undefined // ✅ convertir
-                }));
-                this.budgetsSignal.set(parsed);
-            } catch (e) {
-                console.error('Presupuestos mal formateados en localStorage');
-            }
-        }
-    }
-
-
     // Cliente
     clientName = signal('');
     clientPhone = signal('');
@@ -106,7 +90,6 @@ export class BudgetService {
 
         const updated = [...this.budgetsSignal(), newBudget];
         this.budgetsSignal.set(updated);
-        localStorage.setItem('budgets', JSON.stringify(updated));
     }
 
     saveBudget() {
