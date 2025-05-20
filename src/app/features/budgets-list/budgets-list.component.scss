@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik+Iso&display=swap");
 
+.card-container {
+    margin: 3rem;
+}
+
 .card {
-    margin-top: 60px;
     padding: 10px;
     border-color: #374c96;
     border:none;
@@ -42,6 +45,10 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    .card-container {
+        margin: 1.5rem;
+    }
+
     .card {
         width: 100%;
     }
