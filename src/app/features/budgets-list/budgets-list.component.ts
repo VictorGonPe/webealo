@@ -36,4 +36,6 @@ export class BudgetsListComponent {
   setSort(criteria: 'date' | 'price' | 'name') {
     this.sortBy.set(criteria);
   }
+
 }
+
