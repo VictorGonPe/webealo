@@ -1,0 +1,15 @@
+<div class="card">
+    <div *ngIf="budget()">
+      <h2>Presupuesto de {{ budget().name }}</h2>
+      <p>Email: {{ budget().email }}</p>
+      <p>Teléfono: {{ budget().phone }}</p>
+      <ul>
+        <li *ngFor="let s of budget().services">{{ s }}</li>
+      </ul>
+      <p *ngIf="budget().services.includes('Web')">
+        Incluye Web: {{ budget().pages }} páginas, {{ budget().languages }} idiomas
+      </p>
+      <p>Total: {{ budget().total }} €</p>
+    </div>
+</div>
+

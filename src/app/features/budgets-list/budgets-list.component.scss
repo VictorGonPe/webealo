@@ -2,54 +2,88 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik+Iso&display=swap");
 
 .card-container {
-    margin: 3rem;
+  margin: 3rem;
+  margin-top: 0px;
 }
 
 .card {
-    padding: 10px;
-    border-color: #374c96;
-    border:none;
-    box-shadow: 1px 1px 1px 1px #374c96;
-    width: 70%;
-    margin: auto;
-    margin-top: 3rem;
-    margin-bottom: 10rem;
+  padding: 10px;
+  border-color: #374c96;
+  border: none;
+  box-shadow: 1px 1px 1px 1px #374c96;
+  width: 70%;
+  margin: auto;
+  margin-top: 0rem;
+  margin-bottom: 10rem;
 
-    p {
-        margin-bottom: 0px;
-    }
+  p {
+    margin-bottom: 0px;
+  }
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-h3 {
-    color: #374c96;
-    font-family: 'Audiowide';
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h3,
+strong {
+  color: #374c96;
+  font-family: "Audiowide";
 }
 
 .sub-card {
-    padding: 10px;
-    box-shadow: 1px 1px 1px 1px #deb326;
-    border-radius: 10px;
-    width: 90%;
-    margin: auto;
-    margin-block: 2rem;
+  padding: 10px;
+  box-shadow: 1px 1px 1px 1px #deb326;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  margin-block: 2rem;
+  list-style: none;
+
+  p {
+    margin-bottom: 0px;
     list-style: none;
+  }
+}
 
-    p {
-        margin-bottom: 0px;
-    }
+button {
+  border-bottom: #374c96;
+  &:hover {
+    background-color: #374c96;
+  }
+}
 
+.button-container {
+  margin: 3rem;
+  margin-bottom: 0px;
+}
+
+.sort-buttons {
+  width: 65%;
+  margin-inline: auto;
+  justify-content: end;
 }
 
 @media (max-width: 768px) {
-    .card-container {
-        margin: 1.5rem;
-    }
+  .card-container {
+    margin: 0rem;
+  }
+  .card {
+    width: 90%;
+  }
 
-    .card {
-        width: 100%;
-    }
+  .sub-card {
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    margin-block: 20px;
+  }
+  .sort-buttons {
+    width: 100%;
+  }
 }

@@ -1,11 +1,12 @@
 import { Component, computed, signal, inject } from '@angular/core';
 import { BudgetService } from '../../core/services/budget.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-budgets-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './budgets-list.component.html',
   styleUrls: ['./budgets-list.component.scss']
 })
@@ -33,7 +34,8 @@ export class BudgetsListComponent {
     });
   });
 
-  setSort(criteria: 'date' | 'price' | 'name') {
-    this.sortBy.set(criteria);
+  setSort(model: 'date' | 'price' | 'name') {
+    this.sortBy.set(model);
   }
 }
+

@@ -3,12 +3,13 @@ import { computed, Injectable, signal } from "@angular/core";
 
 @Injectable({ providedIn: 'root' })
 export class BudgetService {
+
     // Cliente
     clientName = signal('');
     clientPhone = signal('');
     clientEmail = signal('');
 
-    // Flags UI
+    // Button
     formTouched = signal(false);
     showWarningModal = signal(false);
     warningTitle = signal('');
@@ -76,12 +77,19 @@ export class BudgetService {
         this.finalExtraPrice.set(value);
     }
 
+    generateId(): string {
+        return crypto.randomUUID(); 
+    }
+
     addBudget(budget: Budget) {
         const newBudget = {
             ...budget,
+            id: this.generateId(),
             addDate: new Date()
         };
-        this.budgetsSignal.update(prev => [...prev, newBudget]);
+
+        const updated = [...this.budgetsSignal(), newBudget];
+        this.budgetsSignal.set(updated);
     }
 
     saveBudget() {
@@ -98,6 +106,7 @@ export class BudgetService {
         if (!this.isFormValid()) return;
 
         this.addBudget({
+            id: this.generateId(),
             name: this.clientName(),
             phone: this.clientPhone(),
             email: this.clientEmail(),
