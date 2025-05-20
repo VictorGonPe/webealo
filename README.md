@@ -1,6 +1,6 @@
 # Webealo
 
-![Preview](src/assets/img/preview-Webealo.png "Webealo")
+![Preview](src/assets/img/preview-webealo.png "Webealo")
 
 ## Project Description
 
