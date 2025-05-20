@@ -109,7 +109,6 @@ export class BudgetService {
 
         this.reset();
     }
-   
 
     reset() {
         this.clientName.set('');

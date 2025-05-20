@@ -6,8 +6,10 @@ import { CommonModule } from '@angular/common';
   selector: 'app-budgets-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './budgets-list.component.html'
+  templateUrl: './budgets-list.component.html',
+  styleUrls: ['./budgets-list.component.scss']
 })
+
 export class BudgetsListComponent {
   private budgetService = inject(BudgetService);
 
