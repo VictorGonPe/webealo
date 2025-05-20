@@ -15,7 +15,7 @@
       <b class="ps-5">{{ budgetService.totalSelected() + budgetService.finalExtraPrice() }}€</b>
     </p>
   </div>
-  <!-- Formulario que aparece solo si hay algo seleccionado -->
+  
   <app-client-form
     [name]="budgetService.clientName"
     [phone]="budgetService.clientPhone"
@@ -37,10 +37,5 @@
       Solicitar presupuesto
     </button>
   </div>
-  <app-modal
-    *ngIf="budgetService.showWarningModal()"
-    [title]="budgetService.warningTitle()"
-    [body]="budgetService.warningBody()"
-    (close)="budgetService.showWarningModal.set(false)"
-  ></app-modal>
+
 </div>
