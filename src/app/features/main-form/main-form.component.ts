@@ -9,7 +9,7 @@ import { ModalComponent } from '../../shared/ui/modal/modal.component';
 @Component({
   selector: 'app-main-form',
   standalone: true,
-  imports: [CardComponent, CommonModule, ClientFormComponent, BudgetsListComponent, ModalComponent],
+  imports: [CardComponent, CommonModule, ClientFormComponent, ModalComponent],
   templateUrl: './main-form.component.html',
   styleUrl: './main-form.component.scss'
 })
