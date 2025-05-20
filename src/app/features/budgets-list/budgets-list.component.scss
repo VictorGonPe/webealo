@@ -40,8 +40,13 @@ h3 {
 
     p {
         margin-bottom: 0px;
+        list-style: none;
     }
 
+}
+
+a {
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {

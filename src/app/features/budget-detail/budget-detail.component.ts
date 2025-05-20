@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BudgetService } from '../../core/services/budget.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-budget-detail',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './budget-detail.component.html',
   styleUrl: './budget-detail.component.scss'
 })
