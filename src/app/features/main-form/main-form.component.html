@@ -1,47 +1,46 @@
 <div class="form">
   <app-card
-    *ngFor="let card of cards()"
+    *ngFor="let card of budgetService.cards()"
     [title]="card.title"
     [subtitle]="card.subtitle"
     [basePrice]="card.price"
     [selected]="card.selected"
-    (selectedChange)="selection($event)"
-    (extraTotalPrice)="onFinalPrice($event)"
+    (selectedChange)="budgetService.selection($event)"
+    (extraTotalPrice)="budgetService.setExtraPrice($event)"
   >
   </app-card>
   <div>
     <p class="d-flex justify-content-end fs-5">
       Total presupuestado:
-      <b class="ps-5">{{ totalSelected() + finalExtraPrice() }}€</b>
+      <b class="ps-5">{{ budgetService.totalSelected() + budgetService.finalExtraPrice() }}€</b>
     </p>
   </div>
   <!-- Formulario que aparece solo si hay algo seleccionado -->
   <app-client-form
-    [name]="clientName"
-    [phone]="clientPhone"
-    [email]="clientEmail"
-    [formTouched]="formTouched"
-    [isNameValid]="isNameValid"
-    [isPhoneValid]="isPhoneValid"
-    [isEmailValid]="isEmailValid"
+    [name]="budgetService.clientName"
+    [phone]="budgetService.clientPhone"
+    [email]="budgetService.clientEmail"
+    [formTouched]="budgetService.formTouched"
+    [isNameValid]="budgetService.isNameValid"
+    [isPhoneValid]="budgetService.isPhoneValid"
+    [isEmailValid]="budgetService.isEmailValid"
   ></app-client-form>
 
   <div class="getBudget d-flex">
     <p>
-      <strong>Total: {{ finalTotal() }} €</strong>
+      <strong>Total: {{ budgetService.finalTotal() }} €</strong>
     </p>
     <button
       class="btn btn-warning font-weight-bold w-75"
-      (click)="saveBudget()"
+      (click)="budgetService.saveBudget()"
     >
       Solicitar presupuesto
     </button>
   </div>
   <app-modal
-    *ngIf="showWarningModal()"
-    [title]="warningTitle()"
-    [body]="warningBody()"
-    (close)="showWarningModal.set(false)"
+    *ngIf="budgetService.showWarningModal()"
+    [title]="budgetService.warningTitle()"
+    [body]="budgetService.warningBody()"
+    (close)="budgetService.showWarningModal.set(false)"
   ></app-modal>
-  <app-budgets-list></app-budgets-list>
 </div>
