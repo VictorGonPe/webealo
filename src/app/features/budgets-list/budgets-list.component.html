@@ -25,7 +25,7 @@
               <div>{{ b.email }}</div>
               <div>{{ b.phone }}</div>
             </div>
-            <div class="section-two">
+            <div class="section-two ps-1">
               <div>Servicios contratados:</div>
               <div>{{ b.services.join(", ") }}</div>
               <div *ngIf="b.services.includes('Web')">

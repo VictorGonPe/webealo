@@ -25,7 +25,7 @@ export class BudgetService {
     clientPhone = signal('');
     clientEmail = signal('');
 
-    // Flags UI
+    // Button
     formTouched = signal(false);
     showWarningModal = signal(false);
     warningTitle = signal('');

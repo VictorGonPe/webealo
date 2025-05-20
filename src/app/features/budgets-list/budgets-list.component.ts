@@ -34,9 +34,8 @@ export class BudgetsListComponent {
     });
   });
 
-  setSort(criteria: 'date' | 'price' | 'name') {
-    this.sortBy.set(criteria);
+  setSort(model: 'date' | 'price' | 'name') {
+    this.sortBy.set(model);
   }
-
 }
 

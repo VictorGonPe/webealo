@@ -24,7 +24,12 @@ ul {
     list-style: none;
 }
 
-h3 {
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h3, strong {
     color: #374c96;
     font-family: 'Audiowide';
 }
@@ -45,16 +50,18 @@ h3 {
 
 }
 
-a {
-    text-decoration: none;
-}
-
 @media (max-width: 768px) {
     .card-container {
-        margin: 1.5rem;
+        margin: 0rem;
+    }
+    .card{
+        width: 90%;
     }
 
-    .card {
-        width: 100%;
+    .sub-card {
+        flex-wrap: wrap;
+        width: 90%;
+        margin: auto;
+        margin-block: 20px;
     }
 }
