@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { LogoComponent } from "../../ui/logo/logo.component";
 
 @Component({
   selector: 'app-header',
-  imports: [LogoComponent],
+  imports: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

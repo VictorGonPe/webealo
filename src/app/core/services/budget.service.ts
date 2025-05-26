@@ -84,7 +84,6 @@ export class BudgetService {
     addBudget(budget: Budget) {
         const newBudget = {
             ...budget,
-            id: this.generateId(),
             addDate: new Date()
         };
 
