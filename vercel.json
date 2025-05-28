@@ -1,4 +1,5 @@
 {
+  "outputDirectory": "dist/webealo",
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
