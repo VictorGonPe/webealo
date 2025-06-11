@@ -1,14 +1,10 @@
 <div class="button-container">
   <div class="sort-buttons d-flex gap-2 mb-0">
-    <button (click)="setSort('date')" class="btn btn-outline-primary btn-sm">
-      Fecha
+    @for (buttonSel of selectedButton; track buttonSel.order) {
+    <button (click)="setSort(buttonSel.order)" class="btn btn-outline-primary btn-sm">
+      {{ buttonSel.name }}
     </button>
-    <button (click)="setSort('price')" class="btn btn-outline-primary btn-sm">
-      Precio
-    </button>
-    <button (click)="setSort('name')" class="btn btn-outline-primary btn-sm">
-      Nombre
-    </button>
+    }
   </div>
 </div>
 

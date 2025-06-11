@@ -3,6 +3,8 @@ import { BudgetService } from '../../core/services/budget.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+ type SortOrder = 'date' | 'price' | 'name';
+
 @Component({
   selector: 'app-budgets-list',
   standalone: true,
@@ -16,7 +18,26 @@ export class BudgetsListComponent {
 
   budgets = this.budgetService.budgets;
 
-  sortBy = signal<'date' | 'price' | 'name'>('date');
+  sortBy = signal<SortOrder>('date');
+
+    setSort(model: SortOrder) {
+    this.sortBy.set(model);
+  }
+
+  selectedButton: {order: SortOrder; name:string}[] = [
+    {
+      order: 'date',
+      name: 'Fecha'
+    },
+    {
+      order: 'price',
+      name: 'Precio'
+    },
+    {
+      order: 'name',
+      name: 'Nombre'
+    }
+  ]
 
   sortedBudgets = computed(() => {
     const budgets = this.budgets();
@@ -34,8 +55,6 @@ export class BudgetsListComponent {
     });
   });
 
-  setSort(model: 'date' | 'price' | 'name') {
-    this.sortBy.set(model);
-  }
+
 }
 
